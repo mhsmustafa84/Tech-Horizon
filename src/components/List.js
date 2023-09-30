@@ -21,7 +21,11 @@ export default function List() {
   const onInputChange = (event) => {
     const value = event.target.value;
     setInput(value);
-    setDisplayedList(list.filter((item) => item.title.includes(value)));
+    setDisplayedList(
+      list.filter((item) =>
+        item.title.toLowerCase().includes(value.toLowerCase())
+      )
+    );
   };
 
   return (
